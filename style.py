@@ -41,3 +41,19 @@ def Button2(entity, msg, layout):
     layout.addWidget(entity)
     entity.setStyleSheet("QPushButton{min-width: 180px; min-height: 70px; color: #fff; font-size: 18px; font-weight: bold; font-family: Sansita, sans-serif; background: #11beff;}")
 
+def Error(title, text):
+	msg = QMessageBox()
+	msg.setIcon(QMessageBox.Critical)
+	msg.setText(text)
+	msg.setWindowTitle(title)
+
+	msg.setStandardButtons(QMessageBox.Ok)
+
+	msg.setStyleSheet("""
+        QMessageBox{background: #22282e;}
+        QLabel{margin-top: 10px;margin-bottom: 10px;font-size: 16px;font-family: NanumGothic, sans-serif;color: #747a81;}
+        PushButton{min-width: 90px;min-height: 35px;color: #fff;font-size: 18px;font-weight: bold;font-family: Sansita;background: #ce70ff;}
+	""")
+
+	msg.show()
+	msg.exec_()
